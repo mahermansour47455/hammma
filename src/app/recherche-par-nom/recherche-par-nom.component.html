@@ -1,0 +1,26 @@
+<form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Nom vetement en tapant</label>
+    <input class="form-control" [(ngModel)]="nomvet" name="nomvet" #searchTerm (keyup)="onkeyUpp(searchTerm.value)">
+    </div>
+    </form>
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date
+    Création</th> </tr>
+    </thead>
+    <tbody *ngFor="let p of vetement">
+        <tr>
+            <td>{{p.idVetement}}</td>
+            <td>{{p.nomVetement}}</td>
+            <td>{{p.prixVetement}}</td>
+            <td>{{p.dateCreation | date:'dd/MM/yyyy'}}</td></tr>
+           
+           
+            </tbody>
+            </table>
+            </div>
+            </div>
+            

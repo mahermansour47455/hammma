@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Produit :</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID vet</label>
+    <input  readonly type="text" [(ngModel)]="currentVetement.idVetement"
+    name="idProduit" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom vet</label>
+    <input type="text"[(ngModel)]= "currentVetement.nomVetement"
+    name="nomProduit" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix vet</label>
+    <input type="number" [(ngModel)]= "currentVetement.prixVetement"
+    name="prixProduit" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        
+
+<label >Date création</label>
+
+<input type="date" [ngModel]="currentVetement.dateCreation | date: 'yyyy-MM-dd'"
+(ngModelChange)=" currentVetement.dateCreation= $event" name="dateCreation"
+class="form-control">
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <select class="form-control form-control-lg" id="idCat" name="idCat"
+    [(ngModel)]="updatedidm">
+    <option *ngFor="let cat of marque" [value]="cat.idM" >
+    
+    {{cat.nomM}}
+    
+    </option>
+    </select>
+    </div>
+<div class="mt-2">
+
+<button type="submit" (click)="updateVetement()"  class="btn btn-success" routerLink="/vetements">Modifer</button>
+
+</div>
+</form>
+
+</div>
